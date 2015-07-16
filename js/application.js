@@ -57,7 +57,7 @@ class Application {
     const directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.castShadow = true;
     directionalLight.position.set(-50, -50, 50);
-    directionalLight.shadowCameraVisible = true;
+    //directionalLight.shadowCameraVisible = true;
     this.addToScene(directionalLight);
   }
 
