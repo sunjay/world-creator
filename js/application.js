@@ -29,9 +29,9 @@ class Application {
   _createCamera(width, height) {
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.up.set(0, 0, 1);
-    camera.position.x = width / 20;
-    camera.position.y = height / 20;
-    camera.position.z = Math.max(width, height)/10;
+    camera.position.x = 50;
+    camera.position.y = 30;
+    camera.position.z = 20;
     return camera;
   }
 
@@ -54,14 +54,11 @@ class Application {
   }
 
   _addLights() {
-    const light = new THREE.AmbientLight(0x404040); // soft white light
-    light.position.z = 30;
-    this.scene.add(light);
-
     const directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.castShadow = true;
-    directionalLight.position.set(100, 0, 100);
-    this.scene.add(directionalLight);
+    directionalLight.position.set(-50, -50, 50);
+    directionalLight.shadowCameraVisible = true;
+    this.addToScene(directionalLight);
   }
 
   _createRenderer(width, height) {
@@ -69,7 +66,6 @@ class Application {
     renderer.setSize(width, height);
     renderer.setClearColor(0x007FBF);
     renderer.shadowMapEnabled = true;
-    renderer.shadowMapType = THREE.PCFSoftShadowMap;
     return renderer;
   }
 

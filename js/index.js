@@ -5,8 +5,9 @@ const app = new Application(WIDTH, HEIGHT);
 
 const planeWidth = 50;
 const planeHeight = 50;
-const geometry = new ProceduralGeometry(planeWidth, planeHeight, planeWidth * 2, planeHeight * 2);
-const f = (x, y) => 5*Math.sin(0.5*x + 0.5*y);
+const resolution = 4;
+const geometry = new ProceduralGeometry(planeWidth, planeHeight, planeWidth * resolution, planeHeight * resolution);
+const f = (x, y) => 2*(Math.sin(0.5*x) + Math.sin(0.5*y));
 geometry.apply(f);
 
 const material = new THREE.MeshLambertMaterial({color: 0xFFBF00, side: THREE.DoubleSide});
