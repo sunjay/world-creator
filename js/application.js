@@ -4,7 +4,7 @@ class Application {
     this.height = height;
     this.scene = new THREE.Scene();
     this.camera = this._createCamera(width, height);
-    this.controls = this._createCameraControls(this.camera);
+    this.controls = null;
     
     this._addLights();
 
@@ -12,6 +12,7 @@ class Application {
   }
 
   start(element) {
+    this.controls = this._createCameraControls(this.camera, element);
     this._addRendererToElement(element);
     this._render();
   }
@@ -35,8 +36,8 @@ class Application {
     return camera;
   }
 
-  _createCameraControls(camera) {
-    const controls = new THREE.TrackballControls(camera);
+  _createCameraControls(camera, element) {
+    const controls = new THREE.TrackballControls(camera, element);
 
     controls.rotateSpeed = 5.0;
     controls.zoomSpeed = 1.2;

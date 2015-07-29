@@ -12,6 +12,8 @@ class ProceduralGeometry extends THREE.PlaneBufferGeometry {
       
       vertices[xIndex + 2] = func(x, y);
     }
+
+    this.attributes.position.needsUpdate = true;
   }
 }
 

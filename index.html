@@ -6,7 +6,34 @@
 	</head>
 	<body>
     <h1>World Creator</h1>
-    <article id="world-creator"></article>
+    <form id="world-form" onsubmit="return false;">
+      <p>
+        <label for="world-function"><code>z(x, y) = </code></label>
+        <input id="world-function" value="world.height*(cos(x/(world.width/4))*cos(x/5) + cos(y/(world.length/4))*cos(y/5))" size="60">
+        <input type="submit" value="Generate World">
+        <br>
+        <small>
+          Use:
+          <code>x</code>,
+          <code>y</code>,
+          <code>sin()</code>,
+          <code>cos()</code>,
+          <code>tan()</code>,
+          <code>abs()</code>,
+          etc.
+        </small><br>
+        <small>
+          Read-only:
+          <code>container.width</code>,
+          <code>container.length</code>,
+          <code>world.height</code>,
+          <code>world.width</code>,
+          <code>world.length</code>,
+          <code>world.resolution</code>
+        </small>
+      </p>
+    </form>
+    <article id="world-creator" style="width: 600px;"></article>
 
 		<script src="js/lib/babel-core/browser.js" charset="utf-8"></script>
 		<script src="bower_components/threejs/build/three.min.js"></script>
