@@ -3,8 +3,8 @@ const exp = Math.exp, sin = Math.sin, cos = Math.cos;
 const WINDOW_WIDTH = 600;
 const WINDOW_HEIGHT = 400;
 
-const TERRAIN_WIDTH = 50;
-const TERRAIN_LENGTH = 50;
+const TERRAIN_WIDTH = 100;
+const TERRAIN_LENGTH = 100;
 const TERRAIN_HEIGHT = 10;
 const TERRAIN_RESOLUTION = 4;
 
